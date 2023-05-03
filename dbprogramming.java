@@ -3,6 +3,7 @@ package dbprogramming;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class dbprogramming {
     public static void main(String[] args) {
@@ -14,6 +15,8 @@ public class dbprogramming {
             System.out.println("Driver loaded");
             Connection connection= DriverManager.getConnection(URL, username, password);
             System.out.println("Database Connected");
+            Statement statement = connection.createStatement();
+            String sql = "";
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         } catch (SQLException e) {
